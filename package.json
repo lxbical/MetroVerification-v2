@@ -15,9 +15,6 @@
     "uws": "^10.148.0",
     "zlib-sync": "^0.1.7"
   },
-  "engine": {
-    "node": "14.x"
-  },
   "name": "rover",
   "version": "1.0.0",
   "main": "src/index.js",
