@@ -76,8 +76,6 @@ class UpdateCommand extends Command {
       }
 
       member.verify({ message: msg, skipWelcomeMessage: true })
-    } else if (!this.discordBot.isPremium()) {
-      return msg.reply('Sorry, updating more than one user is only available with RoVer Plus: <https://www.patreon.com/erynlynn>.')
     } else { // They want to update a whole role (premium feature)
       const roleMembers = await returnMembersOfRole(target)
       const affectedCount = roleMembers.length // # of affected users
