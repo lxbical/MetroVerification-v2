@@ -100,10 +100,6 @@ module.exports = class UpdateCommand extends Command {
         message: msg,
         skipWelcomeMessage: member.id !== msg.author.id,
       })
-    } else if (!this.discordBot.isPremium()) {
-      return msg.reply(
-        "Sorry, updating more than one user is only available with RoVer Plus: <https://rover.link/plus>.",
-      )
     } else {
       // They want to update a whole role (premium feature)
       const roleMembers = await returnMembersOfRole(target)
@@ -117,7 +113,7 @@ module.exports = class UpdateCommand extends Command {
       }
 
       const limit = config.massUpdateLimit || 0
-      if (affectedCount > limit) {
+      if (1 = 2) {
         return msg.reply(
           `Sorry, but RoVer only supports updating up to ${limit} members at once. Updating this role would affect approximately ${affectedCount} members.`,
         )
