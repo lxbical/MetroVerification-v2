@@ -14,7 +14,7 @@ async function recursiveUpdate(memberArray, server, msg, errors) {
     }
     return msg
       .reply(
-        `:white_check_mark: Finished bulk update! ${server.bulkUpdateCount} members affected.${errorText}`,
+        `<myMetroCOMMUNICATIONS:964132920732286998> MyMetro Verification has finished verifying the server, and ${server.bulkUpdateCount} members were affected.${errorText}`,
         { split: true },
       )
       .then(() => {
@@ -75,8 +75,7 @@ module.exports = class UpdateCommand extends Command {
     return (
       this.client.isOwner(msg.author) ||
       msg.member.hasPermission(this.userPermissions) ||
-      msg.member.roles.cache.find((role) => role.name === "RoVer Admin") ||
-      msg.member.roles.cache.find((role) => role.name === "RoVer Updater") ||
+      msg.member.roles.cache.find((role) => role.name === "Staff Team") ||
       !msgArgs ||
       msgArgs.match(new RegExp(`^<?@?!?${msg.author.id}>?$`))
     )
@@ -93,7 +92,7 @@ module.exports = class UpdateCommand extends Command {
         ? await server.getMember(target.id)
         : await server.getMember(msg.author.id)
       if (!member) {
-        return msg.reply("User not in guild.")
+        return msg.reply("<myMetroCOMMUNICATIONS:964132920732286998> I couldn't find this user in the MyMetro server.")
       }
 
       member.verify({
@@ -108,7 +107,7 @@ module.exports = class UpdateCommand extends Command {
 
       if (server.ongoingBulkUpdate) {
         return msg.reply(
-          "There is already an ongoing bulk update in this server.",
+          "<myMetroCOMMUNICATIONS:964132920732286998> MyMetro is currently updating members, please wait before trying to verify the server again.",
         )
       }
 
@@ -121,7 +120,7 @@ module.exports = class UpdateCommand extends Command {
 
       server.ongoingBulkUpdate = true
       msg.reply(
-        `:hourglass_flowing_sand: Updating ${affectedCount} members. We'll let you know when we're done.`,
+        `<myMetroCOMMUNICATIONS:964132920732286998> MyMetro is now updating ${affectedCount} members.`,
       )
 
       recursiveUpdate(roleMembers, server, msg, [])
