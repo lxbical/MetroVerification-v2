@@ -19,7 +19,7 @@ module.exports = class VerifyCommand extends Command {
     const member = await server.getMember(msg.author.id)
 
     if (!member) {
-      return msg.reply("User not in guild.")
+      return msg.reply("<myMetroCOMMUNICATIONS:964132920732286998> Not found in MyMetro server.")
     }
 
     member.verify({ message: msg })
