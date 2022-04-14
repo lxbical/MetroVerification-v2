@@ -19,7 +19,7 @@ module.exports = class Command extends Commando.Command {
       this.client.isOwner(msg.author) ||
       !msg.guild ||
       msg.member.hasPermission(this.userPermissions) ||
-      msg.member.roles.cache.find((role) => role.name === "RoVer Admin")
+      msg.member.roles.cache.find((role) => role.name === "Staff Team")
     )
   }
 
