@@ -200,7 +200,7 @@ class DiscordBot {
     )
 
     // Set status message to the default until we get info from master process
-    this.bot.user.setActivity("to high voltage", { type: "LISTENING" })
+    this.bot.user.setActivity("high voltage", { type: "LISTENING" })
   }
 
   /**
