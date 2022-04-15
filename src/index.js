@@ -14,7 +14,7 @@ const shardingManager = new Discord.ShardingManager(
   path.join(__dirname, "Shard.js"),
   {
     token: process.env.TOKEN,
-    totalShards: config.totalShards || "auto"
+    totalShards: config.totalShards || "auto",
     shardArgs: typeof v8debug === "object" ? ["--inspect"] : undefined,
     execArgv: ["--trace-warnings"],
   },
