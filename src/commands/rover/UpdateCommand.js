@@ -111,13 +111,6 @@ module.exports = class UpdateCommand extends Command {
         )
       }
 
-      const limit = config.massUpdateLimit || 0
-      if (1 = 2) {
-        return msg.reply(
-          `Sorry, but RoVer only supports updating up to ${limit} members at once. Updating this role would affect approximately ${affectedCount} members.`,
-        )
-      }
-
       server.ongoingBulkUpdate = true
       msg.reply(
         `<myMetroCOMMUNICATIONS:964132920732286998> MyMetro is now updating ${affectedCount} members.`,
