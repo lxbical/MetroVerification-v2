@@ -13,8 +13,8 @@ const Util = require("./Util.js")
 const shardingManager = new Discord.ShardingManager(
   path.join(__dirname, "Shard.js"),
   {
-    token: config.token,
-    totalShards: config.totalShards || "auto",
+    token: process.env.TOKEN,
+    totalShards: config.totalShards || "auto"
     shardArgs: typeof v8debug === "object" ? ["--inspect"] : undefined,
     execArgv: ["--trace-warnings"],
   },
@@ -32,7 +32,7 @@ global.GlobalCache = new GlobalCache(shardingManager)
       `https://discord.com/api/v9/guilds/${config.banServer}/bans`,
       {
         headers: {
-          authorization: `Bot ${config.token}`,
+          authorization: `Bot ${process.env.TOKEN}`,
         },
         json: true,
         resolveWithFullResponse: true,
